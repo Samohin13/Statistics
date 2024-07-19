@@ -53,12 +53,12 @@ public class StatsService {
     // в которых продажи были ниже среднего (см. п.2);
     public  long numMonthMinAmount(long[] sales) {
 
-        long minAmount = averageAmount(sales);
+        long averageSalesMonth = averageAmount(sales);
 
          long  monthsCount = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > minAmount) {
+            if (sales[i] > averageSalesMonth) {
                 monthsCount++;
             }
         }
@@ -68,12 +68,12 @@ public class StatsService {
     //количество месяцев, в которых продажи были выше среднего
     public long numMonthMaxAmount(long[] sales) {
 
-        long maxAmount = averageAmount(sales);
+        long averageSalesMonth = averageAmount(sales);
 
         long  monthsCount = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < maxAmount) {
+            if (sales[i] < averageSalesMonth) {
                 monthsCount++;
             }
         }
